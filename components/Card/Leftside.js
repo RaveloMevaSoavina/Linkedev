@@ -7,27 +7,34 @@ const Leftside = (props) => {
         <UserInfo>
           <CardBackground />
           <a>
-            <Photo />
+            <Photo src="/static/images/avatar1.jpg" alt=""/>
             <Link>RAVELO MEVA SOAVINA</Link>
           </a>
           <a>
-            <AddPhotoText>DEVELOPPEUR WEB</AddPhotoText>
+            <JobTitle>DEVELOPPEUR WEB</JobTitle>
           </a>
         </UserInfo>
         <Widget>
           <a>
             <div>
-              <span>Vues de votre profil</span>
-              <span>Relation</span>
-              <span>Développez votre réseau</span>
+              <WidgetItem>
+                <span>Vues de votre profil</span>
+                <span className="nombre">66</span>
+              </WidgetItem>
+              <WidgetItem>
+                <span>Relation<br/>
+                  <strong>Développez votre réseau</strong> 
+                </span>
+                <span className="nombre">528</span>
+                
+              </WidgetItem>
             </div>
-            <img src="/images/widget-icon.svg" alt="" />
           </a>
         </Widget>
         <Item>
           <span>
-            <img src="/images/item-icon.svg" alt="" />
-            Accedez à des infos et des outils exclusifs
+            <img src="static/images/item-icon.svg" alt="" />
+            Mes éléments
           </span>
         </Item>
       </ArtCard>
@@ -46,7 +53,7 @@ const Leftside = (props) => {
           <span>Hashtags suivis</span>
         </a>
         <a>
-          <span>En découvrir plus</span>
+          En découvrir plus
         </a>
       </CommunityCard>
     </Container>
@@ -56,7 +63,6 @@ const Leftside = (props) => {
 const Container = styled.div`
   grid-area: leftside;
   width : 225px;
-  margin-left : 25px;
 `;
 
 const ArtCard = styled.div`
@@ -86,11 +92,10 @@ const CardBackground = styled.div`
   margin: -12px -12px 0;
 `;
 
-const Photo = styled.div`
+const Photo = styled.img`
   box-shadow: none;
-  background-image: url("static/images/photo.svg");
-  width: 72px;
-  height: 72px;
+  width: 100px;
+  height: 100px;
   box-sizing: border-box;
   background-clip: content-box;
   background-color: white;
@@ -99,7 +104,7 @@ const Photo = styled.div`
   background-repeat: no-repeat;
   border: 2px solid white;
   margin: -38px auto 12px;
-  border-radius: 50%;
+  border-radius: 100%;
 `;
 
 const Link = styled.div`
@@ -109,8 +114,8 @@ const Link = styled.div`
   font-weight: 600;
 `;
 
-const AddPhotoText = styled.div`
-  color: #0a66c2;
+const JobTitle = styled.div`
+  color: #4448;
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -121,40 +126,28 @@ const Widget = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-top: 12px;
   padding-bottom: 12px;
-
-  & > a {
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 12px;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.08);
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      span {
-        font-size: 12px;
-        line-height: 1.333;
-        &:first-child {
-          color: rgba(0, 0, 0, 0.6);
-        }
-        &:nth-child(2) {
-          color: rgba(0, 0, 0, 1);
-        }
-      }
-    }
-  }
-
   svg {
     color: rgba(0, 0, 0, 1);
   }
 `;
-
+const WidgetItem = styled.div`
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 12px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  span {
+    font-size: 12px;
+    line-height: 1.333;
+    text-align : left;
+  }
+  .nombre{
+    color: #0a66c2;
+    font-weight : bold;
+  }
+`
 const Item = styled.a`
   border-color: rgba(0, 0, 0, 0.8);
   text-align: left;
@@ -164,7 +157,8 @@ const Item = styled.a`
   span {
     display: flex;
     align-items: center;
-    color: rgba(0, 0, 0, 1);
+    color: rgba(0, 0, 0, 0.75);
+    font-weight : bold;
     svg {
       color: rgba(0, 0, 0, 0.6);
     }
@@ -201,10 +195,11 @@ const CommunityCard = styled(ArtCard)`
       text-decoration: none;
       border-top: 1px solid #d6cec2;
       padding: 16px;
-      span{
-        text-align : center;
-        font-weight : bold;
-      }
+      display : inline;
+      text-align : center;
+      font-weight : 600;
+      font-size : 15px;
+      line-height : 20px;
       &:hover {
         background-color: rgba(0, 0, 0, 0.08);
       }

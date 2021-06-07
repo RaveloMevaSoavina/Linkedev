@@ -1,0 +1,46 @@
+[
+    {
+        "id" : 1,
+        "author" : "Jonathan Boyer Grafikart",
+        "postInfo" : "Dévéloppeur Php confirmé",
+        "avatarURI" : "/static/images/jonathan-boyer.jpg",
+        "authorStatus" : "disconnected",
+        "timestamp" : "2 j",
+        "postLegend" : "J'ai testé votre application et c'est très sympa le principe de clonage de site pour montrer votre capacité sur la partie frontend. C'est cool et très bien fait avec précision et les détails! courage pour la suite monsieur Ravelo Meva Soavina. ",
+        "hasLegend" : true,
+        "hasImage" : false,
+        "imageURI" : "",
+        "hasVideo" : false,
+        "videoURI" : "",
+        "rateReactions" : 138,
+        "rateComments" : 4,
+        "hasComments" : false,
+        "comments" : []
+    },
+    {
+        "id" : 2,
+        "author" : "Honoré Hounouanou - Teacher du Net",
+        "postInfo" : "Dévéloppeur web et formateur ",
+        "avatarURI" : "/static/images/Honoréh.jpg",
+        "authorStatus" : "disconnected",
+        "timestamp" : "1 semaine",
+        "postLegend" : "Je vous recommande monsieur Ravelo Meva Soavina pour ces Mishibishi faits avec précision! Super Meva !  Echec et bamm 💣 ,",
+        "hasLegend" : true,
+        "hasImage" : true,
+        "imageURI" : "/static/images/tdn.png",
+        "hasVideo" : false,
+        "videoURI" : "",
+        "rateReactions" : 1290,
+        "rateComments" : 32,
+        "hasComments" : true,
+        "comments" : [
+            {
+                "id" : 1,
+                "author" : "RAVELO MEVA SOAVINA",
+                "postInfo" : "Dévéloppeur web FrontEnd ",
+                "avatarURI" : "/static/images/avatar1.jpg",
+                "commentaire" : "Merci pour tout Honoré"
+            }
+        ]
+    }
+]

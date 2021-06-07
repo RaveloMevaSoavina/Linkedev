@@ -1,6 +1,9 @@
-import styled from "styled-components";
 
-const Rightside = (props) => {
+import react from 'react'
+import styled from "styled-components";
+import data from "../../public/static/data/actuality"
+
+function Rightside(){
   return (
     <Container>
       <FollowCard>
@@ -10,24 +13,17 @@ const Rightside = (props) => {
         </Title>
 
         <FeedList>
-          <li>
-            <a>
-              <Avatar />
-            </a>
-            <div>
-              <span>#Linkedin</span>
-              <button> <img src="static/images/plus-icon.svg" alt="" /> Suivre</button>
-            </div>
-          </li>
-          <li>
-            <a>
-              <Avatar />
-            </a>
-            <div>
-              <span>#Video</span>
-              <button> <img src="static/images/plus-icon.svg" alt="" /> Suivre</button>
-            </div>
-          </li>
+          {data.map(brandy => 
+            <li key={brandy.id}>
+              <a>
+                <Avatar alt={brandy.brand} src={brandy.logoURI}/>
+              </a>
+              <div>
+                <span>{brandy.brand}</span>
+                <button> <img src="static/images/plus-icon.svg" alt="" /> Suivre</button>
+              </div>
+            </li>
+          )}
         </FeedList>
 
         <Recommendation>
@@ -58,17 +54,18 @@ const Rightside = (props) => {
   );
 };
 
+export default Rightside;
+
 const Container = styled.div`
   grid-area: rightside;
   width: 315px;
-  
 `;
 
 const FollowCard = styled.div`
   text-align: center;
   overflow: hidden;
   margin-bottom: 8px;
-  background-color: #fff;
+  background-color: #FFF;
   border-radius: 5px;
   position: relative;
   border: none;
@@ -93,18 +90,22 @@ const FeedList = styled.ul`
   li {
     display: flex;
     align-items: center;
-    margin: 12px 0;
+    margin: 20px 0;
     position: relative;
     font-size: 14px;
     & > div {
       display: flex;
       flex-direction: column;
+      span{
+        margin-bottom : 5px;
+        font-weight : bold;
+      }
     }
 
     button {
       background-color: transparent;
       color: rgba(0, 0, 0, 0.6);
-      padding: 16px;
+      padding: 10px 20px;
       align-items: center;
       border-radius: 15px;
       box-sizing: border-box;
@@ -114,12 +115,16 @@ const FeedList = styled.ul`
       max-width: 480px;
       text-align: center;
       outline: none;
+      border : 1px solid rgba(0, 0, 0, 0.5);
+      cursor : pointer;
+      &:hover{
+        background-color: rgba(0, 0, 0, 0.08);
+      }
     }
   }
 `;
 
-const Avatar = styled.div`
-  background-image: url("https://static-exp1.licdn.com/sc/h/1b4vl1r54ijmrmcyxzoidwmxs");
+const Avatar = styled.img`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -150,7 +155,7 @@ const Footer = styled.div`
     list-style-type : none;
     display : flex;
     flex-direction : row;
-    flex-wrap : wrap
+    flex-wrap : wrap;
     li a{
       color : rgba(0, 0, 0, 0.6);
       font-size : 8px;
@@ -158,4 +163,4 @@ const Footer = styled.div`
   }
 `
 
-export default Rightside;
+

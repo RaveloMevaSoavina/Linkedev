@@ -2,12 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import HomeLeftSide from '../../components/Card/Leftside'
 import HomeRightSide from '../../components/Card/Rightside'
+import Post from '../../components/Post/Post'
 
 function Home() {
     return (
         <Layout>
             <HomeLeftSide/>
-            home page
+            <Post/>
             <HomeRightSide/>
         </Layout>
     )
@@ -16,16 +17,10 @@ function Home() {
 export default Home
 
 const Layout = styled.div`
-  display: grid;
-  grid-template-areas: "leftside main rightside";
-  grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
-  column-gap: 25px;
-  row-gap: 25px;
-  grid-template-row: auto;
-  margin: 25px 0;
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    padding: 0 5px;
-  }
+  display : flex;
+  flex-direction : row;
+  justify-content : space-around;
+  width : 1120px;
+  margin : 25px auto;
+  
 `;
