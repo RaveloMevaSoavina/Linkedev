@@ -54,7 +54,7 @@ function Header() {
 
             <User>
               <a href="#">
-                <img src="static/images/user.svg" alt="" />
+                <img src="static/images/avatar1.jpg" alt="" />
                 <span>
                     Vous
                     <img src="static/images/down-icon.svg" alt="" />
